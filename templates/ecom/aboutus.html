@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/x-icon" href="{% static 'images/logo/meatBroker Logo.png' %}" />
+  <title>Meat Brokers</title>
+  <style media="screen">
+    .footer{
+      position: fixed;
+    }
+  </style>
+</head>
+
+<body style="background-image: url('{% static 'images/bg.jpg' %}'); background-size: cover;">
+  {%if request.user.is_authenticated%}
+    {% include "ecom/customer_navbar.html" %} <!--only request.user.is_authenticated-->
+  {%else%}
+    {% include "ecom/navbar.html" %}
+  {%endif%}
+  <br><br><br>
+  <h3 style="text-align:center; color: white;">🥩 Welcome to Shenge Pty Ltd - Your Premier Online Pig wholesale 🥩 </h3>
+  <br><br>
+  <h4 style="text-align:center; color: white;">
+    Shenge Ltd is a leading provider of innovative information products and services for the global agriculture. Shenge Ltd can be accessed through our internationally recognized agriculture information portal. The family includes AgCareers.com -- the leading human resources website for the agriculture and food industry as well as a crop and livestock marketing advisory service to producers across South Africa which assists them to effectively address their price risk management. It also includes Farms.com Professional Services – a full-service interactive technology firm specializing in the agriculture, food, and natural resource sector.
+  </h4>
+  <br>
+  <h3 style="text-align:center; color: white;">Shenge Pty Ltd” </h3>
+  <br><br><br><br><br><br><br><br><br><br>
+  {% include "ecom/footer.html" %}
+</body>
+
+</html>
